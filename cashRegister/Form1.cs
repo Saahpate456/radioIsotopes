@@ -82,16 +82,11 @@ namespace cashRegister
             total = taxAmount + subTotal;
 
             totalOutput.Text = $"{subTotal.ToString("C")}";
-
-            //if (tendered < total)
-          //  {
-                //tendered = Convert.ToString(tendered);
-          //  };
         }
 
         private void pu239costLabel_Click(object sender, EventArgs e)
         {
-            pu239Counter = pu239Counter + 1;
+
         }
 
         private void u235Label_Click(object sender, EventArgs e)
@@ -126,7 +121,13 @@ namespace cashRegister
 
         private void changeButton_Click(object sender, EventArgs e)
         {
+            if (tendered < total)
+            {
+                changeButton.Text = "Insufficient Funds";
+            };
 
+            change = total - tendered;
+            subOutput.Text = $"{subTotal.ToString("C")}";
         }
 
         private void tenderedInput_TextChanged(object sender, EventArgs e)
@@ -211,7 +212,7 @@ namespace cashRegister
 
         private void pu239Label_Click(object sender, EventArgs e)
         {
-
+            pu239Counter = pu239Counter + 1;
         }
 
         private void orderBox_Click(object sender, EventArgs e)
