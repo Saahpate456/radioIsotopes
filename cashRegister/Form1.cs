@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace cashRegister
 {
@@ -21,12 +22,13 @@ namespace cashRegister
         double pu239 = 4500;
         double tax = 0.13;
         double taxAmount;
-        double tendered;
         double change;
         double subTotal1;
         double subTotal2;
         double subTotal3;
         double total;
+        double tendered;
+
 
         public Form1()
         {
@@ -81,7 +83,7 @@ namespace cashRegister
 
             total = taxAmount + subTotal;
 
-            totalOutput.Text = $"{subTotal.ToString("C")}";
+            totalOutput.Text = $"{total.ToString("C")}";
         }
 
         private void pu239costLabel_Click(object sender, EventArgs e)
@@ -97,6 +99,10 @@ namespace cashRegister
         private void u238Label_Click(object sender, EventArgs e)
         {
             u238Counter = u238Counter + 1;
+        }
+        private void pu239Label_Click(object sender, EventArgs e)
+        {
+            pu239Counter = pu239Counter + 1;
         }
 
         private void u235Output_TextChanged(object sender, EventArgs e)
@@ -121,13 +127,10 @@ namespace cashRegister
 
         private void changeButton_Click(object sender, EventArgs e)
         {
-            if (tendered < total)
-            {
-                changeButton.Text = "Insufficient Funds";
-            };
+            change = tendered - total;
 
-            change = total - tendered;
-            subOutput.Text = $"{subTotal.ToString("C")}";
+            changeOutput.Text = $"{change.ToString("C")}";
+
         }
 
         private void tenderedInput_TextChanged(object sender, EventArgs e)
@@ -210,14 +213,28 @@ namespace cashRegister
 
         }
 
-        private void pu239Label_Click(object sender, EventArgs e)
+        private void orderBox_Click(object sender, EventArgs e)
         {
-            pu239Counter = pu239Counter + 1;
+
         }
 
-        private void orderBox_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
 
         }
     }
 }
+///if (tenderedAmount < total)
+///{
+ ///   changeButton.Text = "Insufficient Funds";
+///}
