@@ -34,7 +34,6 @@
             this.pu239Label = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.titlePic = new System.Windows.Forms.PictureBox();
             this.picBox3 = new System.Windows.Forms.PictureBox();
             this.picBox2 = new System.Windows.Forms.PictureBox();
             this.picBox1 = new System.Windows.Forms.PictureBox();
@@ -64,13 +63,39 @@
             this.u235costLabel = new System.Windows.Forms.Label();
             this.u238costLabel = new System.Windows.Forms.Label();
             this.pu239costLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.titlePic)).BeginInit();
+            this.recieptbox1 = new System.Windows.Forms.PictureBox();
+            this.titleLabel2 = new System.Windows.Forms.Label();
+            this.recieptbox2 = new System.Windows.Forms.PictureBox();
+            this.recieptbox5 = new System.Windows.Forms.PictureBox();
+            this.recieptBox3 = new System.Windows.Forms.PictureBox();
+            this.recieptBox4 = new System.Windows.Forms.PictureBox();
+            this.recieptLabel1 = new System.Windows.Forms.Label();
+            this.u235recieptlabel = new System.Windows.Forms.Label();
+            this.u238recieptlabel2 = new System.Windows.Forms.Label();
+            this.pu239recieptlabel3 = new System.Windows.Forms.Label();
+            this.subrecieptLabel = new System.Windows.Forms.Label();
+            this.taxrecieptLabel = new System.Windows.Forms.Label();
+            this.totalrecieptLabel = new System.Windows.Forms.Label();
+            this.tenderedrecieptlabel = new System.Windows.Forms.Label();
+            this.changerecieptlabel = new System.Windows.Forms.Label();
+            this.recieptbox6 = new System.Windows.Forms.PictureBox();
+            this.messagerecieptlabel = new System.Windows.Forms.Label();
+            this.resetButton = new System.Windows.Forms.Button();
+            this.recieptLabel2 = new System.Windows.Forms.Label();
+            this.titlePic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sepatatorBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recieptbox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recieptbox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recieptbox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recieptBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recieptBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recieptbox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titlePic)).BeginInit();
             this.SuspendLayout();
             // 
             // u235Label
@@ -127,16 +152,6 @@
             this.titleLabel.Size = new System.Drawing.Size(114, 15);
             this.titleLabel.TabIndex = 61;
             this.titleLabel.Text = "Radioistope Market";
-            // 
-            // titlePic
-            // 
-            this.titlePic.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.titlePic.Location = new System.Drawing.Point(0, 0);
-            this.titlePic.Name = "titlePic";
-            this.titlePic.Size = new System.Drawing.Size(795, 37);
-            this.titlePic.TabIndex = 60;
-            this.titlePic.TabStop = false;
-            this.titlePic.Click += new System.EventHandler(this.titlePic_Click);
             // 
             // picBox3
             // 
@@ -196,6 +211,7 @@
             // 
             // printButton
             // 
+            this.printButton.Enabled = false;
             this.printButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.printButton.Location = new System.Drawing.Point(55, 371);
             this.printButton.Name = "printButton";
@@ -203,6 +219,7 @@
             this.printButton.TabIndex = 82;
             this.printButton.Text = "Print Receipt";
             this.printButton.UseVisualStyleBackColor = true;
+            this.printButton.Click += new System.EventHandler(this.printButton_Click_1);
             // 
             // changeOutput
             // 
@@ -225,6 +242,7 @@
             // 
             // changeButton
             // 
+            this.changeButton.Enabled = false;
             this.changeButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeButton.Location = new System.Drawing.Point(55, 311);
             this.changeButton.Name = "changeButton";
@@ -236,9 +254,9 @@
             // 
             // tenderedInput
             // 
-            this.tenderedInput.Location = new System.Drawing.Point(147, 285);
+            this.tenderedInput.Location = new System.Drawing.Point(134, 285);
             this.tenderedInput.Name = "tenderedInput";
-            this.tenderedInput.Size = new System.Drawing.Size(58, 20);
+            this.tenderedInput.Size = new System.Drawing.Size(71, 20);
             this.tenderedInput.TabIndex = 78;
             this.tenderedInput.TextChanged += new System.EventHandler(this.tenderedInput_TextChanged);
             // 
@@ -428,11 +446,241 @@
             this.pu239costLabel.Text = "$4500/kg";
             this.pu239costLabel.Click += new System.EventHandler(this.pu239costLabel_Click);
             // 
+            // recieptbox1
+            // 
+            this.recieptbox1.BackColor = System.Drawing.SystemColors.Control;
+            this.recieptbox1.Location = new System.Drawing.Point(507, 40);
+            this.recieptbox1.Name = "recieptbox1";
+            this.recieptbox1.Size = new System.Drawing.Size(273, 47);
+            this.recieptbox1.TabIndex = 87;
+            this.recieptbox1.TabStop = false;
+            this.recieptbox1.Visible = false;
+            // 
+            // titleLabel2
+            // 
+            this.titleLabel2.AutoSize = true;
+            this.titleLabel2.Location = new System.Drawing.Point(593, 54);
+            this.titleLabel2.Name = "titleLabel2";
+            this.titleLabel2.Size = new System.Drawing.Size(105, 13);
+            this.titleLabel2.TabIndex = 88;
+            this.titleLabel2.Text = "Radioisotope Market";
+            this.titleLabel2.Visible = false;
+            // 
+            // recieptbox2
+            // 
+            this.recieptbox2.BackColor = System.Drawing.SystemColors.Control;
+            this.recieptbox2.Location = new System.Drawing.Point(507, 84);
+            this.recieptbox2.Name = "recieptbox2";
+            this.recieptbox2.Size = new System.Drawing.Size(273, 66);
+            this.recieptbox2.TabIndex = 90;
+            this.recieptbox2.TabStop = false;
+            this.recieptbox2.Visible = false;
+            // 
+            // recieptbox5
+            // 
+            this.recieptbox5.BackColor = System.Drawing.SystemColors.Control;
+            this.recieptbox5.Location = new System.Drawing.Point(507, 345);
+            this.recieptbox5.Name = "recieptbox5";
+            this.recieptbox5.Size = new System.Drawing.Size(273, 79);
+            this.recieptbox5.TabIndex = 91;
+            this.recieptbox5.TabStop = false;
+            this.recieptbox5.Visible = false;
+            // 
+            // recieptBox3
+            // 
+            this.recieptBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.recieptBox3.Location = new System.Drawing.Point(507, 147);
+            this.recieptBox3.Name = "recieptBox3";
+            this.recieptBox3.Size = new System.Drawing.Size(273, 102);
+            this.recieptBox3.TabIndex = 92;
+            this.recieptBox3.TabStop = false;
+            this.recieptBox3.Visible = false;
+            // 
+            // recieptBox4
+            // 
+            this.recieptBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.recieptBox4.Location = new System.Drawing.Point(507, 247);
+            this.recieptBox4.Name = "recieptBox4";
+            this.recieptBox4.Size = new System.Drawing.Size(273, 98);
+            this.recieptBox4.TabIndex = 93;
+            this.recieptBox4.TabStop = false;
+            this.recieptBox4.Visible = false;
+            // 
+            // recieptLabel1
+            // 
+            this.recieptLabel1.AutoSize = true;
+            this.recieptLabel1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recieptLabel1.Location = new System.Drawing.Point(529, 91);
+            this.recieptLabel1.Name = "recieptLabel1";
+            this.recieptLabel1.Size = new System.Drawing.Size(126, 15);
+            this.recieptLabel1.TabIndex = 96;
+            this.recieptLabel1.Text = "Order Number 1001";
+            this.recieptLabel1.Visible = false;
+            // 
+            // u235recieptlabel
+            // 
+            this.u235recieptlabel.AutoSize = true;
+            this.u235recieptlabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.u235recieptlabel.Location = new System.Drawing.Point(529, 161);
+            this.u235recieptlabel.Name = "u235recieptlabel";
+            this.u235recieptlabel.Size = new System.Drawing.Size(14, 15);
+            this.u235recieptlabel.TabIndex = 97;
+            this.u235recieptlabel.Text = "l";
+            this.u235recieptlabel.Visible = false;
+            // 
+            // u238recieptlabel2
+            // 
+            this.u238recieptlabel2.AutoSize = true;
+            this.u238recieptlabel2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.u238recieptlabel2.Location = new System.Drawing.Point(529, 193);
+            this.u238recieptlabel2.Name = "u238recieptlabel2";
+            this.u238recieptlabel2.Size = new System.Drawing.Size(14, 15);
+            this.u238recieptlabel2.TabIndex = 98;
+            this.u238recieptlabel2.Text = "l";
+            this.u238recieptlabel2.Visible = false;
+            // 
+            // pu239recieptlabel3
+            // 
+            this.pu239recieptlabel3.AutoSize = true;
+            this.pu239recieptlabel3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pu239recieptlabel3.Location = new System.Drawing.Point(529, 222);
+            this.pu239recieptlabel3.Name = "pu239recieptlabel3";
+            this.pu239recieptlabel3.Size = new System.Drawing.Size(14, 15);
+            this.pu239recieptlabel3.TabIndex = 99;
+            this.pu239recieptlabel3.Text = "l";
+            this.pu239recieptlabel3.Visible = false;
+            // 
+            // subrecieptLabel
+            // 
+            this.subrecieptLabel.AutoSize = true;
+            this.subrecieptLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subrecieptLabel.Location = new System.Drawing.Point(529, 264);
+            this.subrecieptLabel.Name = "subrecieptLabel";
+            this.subrecieptLabel.Size = new System.Drawing.Size(14, 15);
+            this.subrecieptLabel.TabIndex = 100;
+            this.subrecieptLabel.Text = "l";
+            this.subrecieptLabel.Visible = false;
+            // 
+            // taxrecieptLabel
+            // 
+            this.taxrecieptLabel.AutoSize = true;
+            this.taxrecieptLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taxrecieptLabel.Location = new System.Drawing.Point(529, 288);
+            this.taxrecieptLabel.Name = "taxrecieptLabel";
+            this.taxrecieptLabel.Size = new System.Drawing.Size(14, 15);
+            this.taxrecieptLabel.TabIndex = 101;
+            this.taxrecieptLabel.Text = "l";
+            this.taxrecieptLabel.Visible = false;
+            // 
+            // totalrecieptLabel
+            // 
+            this.totalrecieptLabel.AutoSize = true;
+            this.totalrecieptLabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalrecieptLabel.Location = new System.Drawing.Point(529, 316);
+            this.totalrecieptLabel.Name = "totalrecieptLabel";
+            this.totalrecieptLabel.Size = new System.Drawing.Size(14, 15);
+            this.totalrecieptLabel.TabIndex = 102;
+            this.totalrecieptLabel.Text = "l";
+            this.totalrecieptLabel.Visible = false;
+            // 
+            // tenderedrecieptlabel
+            // 
+            this.tenderedrecieptlabel.AutoSize = true;
+            this.tenderedrecieptlabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenderedrecieptlabel.Location = new System.Drawing.Point(529, 362);
+            this.tenderedrecieptlabel.Name = "tenderedrecieptlabel";
+            this.tenderedrecieptlabel.Size = new System.Drawing.Size(14, 15);
+            this.tenderedrecieptlabel.TabIndex = 103;
+            this.tenderedrecieptlabel.Text = "l";
+            this.tenderedrecieptlabel.Visible = false;
+            // 
+            // changerecieptlabel
+            // 
+            this.changerecieptlabel.AutoSize = true;
+            this.changerecieptlabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changerecieptlabel.Location = new System.Drawing.Point(529, 390);
+            this.changerecieptlabel.Name = "changerecieptlabel";
+            this.changerecieptlabel.Size = new System.Drawing.Size(14, 15);
+            this.changerecieptlabel.TabIndex = 104;
+            this.changerecieptlabel.Text = "l";
+            this.changerecieptlabel.Visible = false;
+            // 
+            // recieptbox6
+            // 
+            this.recieptbox6.BackColor = System.Drawing.SystemColors.Control;
+            this.recieptbox6.Location = new System.Drawing.Point(507, 421);
+            this.recieptbox6.Name = "recieptbox6";
+            this.recieptbox6.Size = new System.Drawing.Size(273, 68);
+            this.recieptbox6.TabIndex = 105;
+            this.recieptbox6.TabStop = false;
+            this.recieptbox6.Visible = false;
+            // 
+            // messagerecieptlabel
+            // 
+            this.messagerecieptlabel.AutoSize = true;
+            this.messagerecieptlabel.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messagerecieptlabel.Location = new System.Drawing.Point(529, 437);
+            this.messagerecieptlabel.Name = "messagerecieptlabel";
+            this.messagerecieptlabel.Size = new System.Drawing.Size(14, 15);
+            this.messagerecieptlabel.TabIndex = 106;
+            this.messagerecieptlabel.Text = "l";
+            this.messagerecieptlabel.Visible = false;
+            // 
+            // resetButton
+            // 
+            this.resetButton.Location = new System.Drawing.Point(290, 351);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(99, 43);
+            this.resetButton.TabIndex = 107;
+            this.resetButton.Text = "Reset Order";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
+            // recieptLabel2
+            // 
+            this.recieptLabel2.AutoSize = true;
+            this.recieptLabel2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recieptLabel2.Location = new System.Drawing.Point(529, 116);
+            this.recieptLabel2.Name = "recieptLabel2";
+            this.recieptLabel2.Size = new System.Drawing.Size(119, 15);
+            this.recieptLabel2.TabIndex = 108;
+            this.recieptLabel2.Text = "November 1, 2022";
+            this.recieptLabel2.Visible = false;
+            // 
+            // titlePic
+            // 
+            this.titlePic.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.titlePic.Location = new System.Drawing.Point(0, 0);
+            this.titlePic.Name = "titlePic";
+            this.titlePic.Size = new System.Drawing.Size(795, 37);
+            this.titlePic.TabIndex = 60;
+            this.titlePic.TabStop = false;
+            this.titlePic.Click += new System.EventHandler(this.titlePic_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 487);
+            this.Controls.Add(this.recieptLabel2);
+            this.Controls.Add(this.resetButton);
+            this.Controls.Add(this.messagerecieptlabel);
+            this.Controls.Add(this.recieptbox6);
+            this.Controls.Add(this.changerecieptlabel);
+            this.Controls.Add(this.tenderedrecieptlabel);
+            this.Controls.Add(this.totalrecieptLabel);
+            this.Controls.Add(this.taxrecieptLabel);
+            this.Controls.Add(this.subrecieptLabel);
+            this.Controls.Add(this.pu239recieptlabel3);
+            this.Controls.Add(this.u238recieptlabel2);
+            this.Controls.Add(this.u235recieptlabel);
+            this.Controls.Add(this.recieptLabel1);
+            this.Controls.Add(this.recieptBox4);
+            this.Controls.Add(this.recieptBox3);
+            this.Controls.Add(this.recieptbox5);
+            this.Controls.Add(this.recieptbox2);
+            this.Controls.Add(this.titleLabel2);
+            this.Controls.Add(this.recieptbox1);
             this.Controls.Add(this.pu239costLabel);
             this.Controls.Add(this.u238costLabel);
             this.Controls.Add(this.u235costLabel);
@@ -469,13 +717,20 @@
             this.Controls.Add(this.backPicBox);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.titlePic)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sepatatorBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recieptbox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recieptbox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recieptbox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recieptBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recieptBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recieptbox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titlePic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,7 +744,6 @@
         private System.Windows.Forms.Label u238Label;
         private System.Windows.Forms.Label pu239Label;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox titlePic;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.PictureBox backPicBox;
         private System.Windows.Forms.PictureBox orderBox;
@@ -517,6 +771,26 @@
         private System.Windows.Forms.Label u235costLabel;
         private System.Windows.Forms.Label u238costLabel;
         private System.Windows.Forms.Label pu239costLabel;
+        private System.Windows.Forms.PictureBox recieptbox1;
+        private System.Windows.Forms.Label titleLabel2;
+        private System.Windows.Forms.PictureBox recieptbox2;
+        private System.Windows.Forms.PictureBox recieptbox5;
+        private System.Windows.Forms.PictureBox recieptBox3;
+        private System.Windows.Forms.PictureBox recieptBox4;
+        private System.Windows.Forms.Label recieptLabel1;
+        private System.Windows.Forms.Label u235recieptlabel;
+        private System.Windows.Forms.Label u238recieptlabel2;
+        private System.Windows.Forms.Label pu239recieptlabel3;
+        private System.Windows.Forms.Label subrecieptLabel;
+        private System.Windows.Forms.Label taxrecieptLabel;
+        private System.Windows.Forms.Label totalrecieptLabel;
+        private System.Windows.Forms.Label tenderedrecieptlabel;
+        private System.Windows.Forms.Label changerecieptlabel;
+        private System.Windows.Forms.PictureBox recieptbox6;
+        private System.Windows.Forms.Label messagerecieptlabel;
+        private System.Windows.Forms.Button resetButton;
+        private System.Windows.Forms.Label recieptLabel2;
+        private System.Windows.Forms.PictureBox titlePic;
     }
 }
 
