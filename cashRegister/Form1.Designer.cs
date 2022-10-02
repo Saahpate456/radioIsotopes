@@ -254,6 +254,7 @@
             // 
             // tenderedInput
             // 
+            this.tenderedInput.Enabled = false;
             this.tenderedInput.Location = new System.Drawing.Point(134, 285);
             this.tenderedInput.Name = "tenderedInput";
             this.tenderedInput.Size = new System.Drawing.Size(71, 20);
