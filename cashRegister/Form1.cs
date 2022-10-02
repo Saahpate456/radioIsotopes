@@ -89,6 +89,8 @@ namespace cashRegister
             totalOutput.Text = $"{total.ToString("C")}";
 
             changeButton.Enabled = true;
+
+            tenderedInput.Enabled = true;
         }
 
         private void pu239costLabel_Click(object sender, EventArgs e)
@@ -132,8 +134,14 @@ namespace cashRegister
 
         private void changeButton_Click(object sender, EventArgs e)
         {
+            tendered = Convert.ToDouble(tenderedInput.Text);
 
             change = tendered - total;
+
+            if (tendered < total)
+            {
+                changeButton.Text = "Insufficient Funds";
+            }
 
             changeOutput.Text = $"{change.ToString("C")}";
 
@@ -267,7 +275,7 @@ namespace cashRegister
 
             changeOutput.Text = $"{change.ToString("C")}";
 
-            tenderedInput.Text = $"{tendered.ToString("C")}";
+            tenderedInput.Text = $"{tendered.ToString("")}";
 
             recieptbox1.Visible = false;
             titleLabel2.Visible = false;
@@ -292,6 +300,10 @@ namespace cashRegister
 
             recieptbox6.Visible = false;
             messagerecieptlabel.Visible = false;
+
+
+            changeButton.Enabled = false;
+            printButton.Enabled = false;
         }
 
         private void printButton_Click(object sender, EventArgs e)
@@ -372,11 +384,6 @@ namespace cashRegister
         }
     }
 }
-///if (tenderedAmount < total)
-///{
-///   changeButton.Text = "Insufficient Funds";
-///}
-
 
 ///recieptbox1.Visible = false;
 ///titleLabel2.Visible = false;
@@ -401,4 +408,18 @@ namespace cashRegister
 
 ///recieptbox6.Visible = false;
 ///messagerecieptlabel.Visible = false;
-//
+///
+/// 
+/// 
+/// This should go into changeButton
+/// 
+/// 
+///if (tendered < total)
+///{
+///    printButton.Enabled = false;
+///}
+///
+///if (tendered < total)
+///{
+///   changeOutput.Text = "Pay More!";
+///}
