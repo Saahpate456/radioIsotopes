@@ -277,6 +277,8 @@ namespace cashRegister
 
             tenderedInput.Text = $"{tendered.ToString("")}";
 
+            changeButton.Text = $"Calculate Change";
+
             recieptbox1.Visible = false;
             titleLabel2.Visible = false;
 
@@ -316,13 +318,13 @@ namespace cashRegister
             recieptbox1.Visible = true;
             titleLabel2.Visible = true;
             Refresh();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
 
             recieptbox2.Visible = true;
             recieptLabel1.Visible = true;
             recieptLabel2.Visible = true;
             Refresh();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
 
             recieptBox3.Visible = true;
             
@@ -332,17 +334,17 @@ namespace cashRegister
             u235recieptlabel.Visible = true;
             u235recieptlabel.Text = $"Uranium-235     x{u235Counter}     {subTotal1.ToString("C")}";
             Refresh();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
 
             u238recieptlabel2.Visible = true;
             u238recieptlabel2.Text = $"Uranium-238     x{u238Counter}     {subTotal2.ToString("C")}";
             Refresh();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
 
             pu239recieptlabel3.Visible = true;
             pu239recieptlabel3.Text = $"Plutonium-239   x{pu239Counter}     {subTotal3.ToString("C")}";
             Refresh();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
 
             
             
@@ -350,17 +352,17 @@ namespace cashRegister
             subrecieptLabel.Visible = true;
             subrecieptLabel.Text = $"Subtotal               {subTotal.ToString("C")}";
             Refresh();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
 
             taxrecieptLabel.Visible = true;
             taxrecieptLabel.Text = $"Tax                    {taxAmount.ToString("C")}";
             Refresh();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
 
             totalrecieptLabel.Visible = true;
             totalrecieptLabel.Text = $"Total                  {total.ToString("C")}";
             Refresh();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
 
 
 
