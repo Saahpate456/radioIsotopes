@@ -95,5 +95,14 @@
   <ItemGroup>
     <None Include="Resources\Nuclear_symbol.svg1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receipt printing.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\419465__14g-panska-vagnerova-adela__05-receipt.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\345057__azumarill__epson-receipt-printer7.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

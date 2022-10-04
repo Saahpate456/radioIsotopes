@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Media;
 
 namespace cashRegister
 {
@@ -35,16 +36,6 @@ namespace cashRegister
         {
             InitializeComponent();
             checkBuy.Start();
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-           
         }
 
         private void checkBuy_Tick(object sender, EventArgs e)
@@ -93,11 +84,6 @@ namespace cashRegister
             tenderedInput.Enabled = true;
         }
 
-        private void pu239costLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void u235Label_Click(object sender, EventArgs e)
         {
             u235Counter = u235Counter + 1;
@@ -111,142 +97,33 @@ namespace cashRegister
         {
             pu239Counter = pu239Counter + 1;
         }
-
-        private void u235Output_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void u238costLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void u235costLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void changeOutput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void changeButton_Click(object sender, EventArgs e)
         {
-            tendered = Convert.ToDouble(tenderedInput.Text);
-
-            change = tendered - total;
-
-            if (tendered < total)
+            try
             {
-                changeButton.Text = "Insufficient Funds";
+                tendered = Convert.ToDouble(tenderedInput.Text);
+
+                change = tendered - total;
+
+                if (tendered < total)
+                {
+                    changeButton.Text = "Insufficient Funds";
+                    printButton.Enabled = false;
+                }
+
+                changeOutput.Text = $"{change.ToString("C")}";
+
+                printButton.Enabled = true;
             }
-
-            changeOutput.Text = $"{change.ToString("C")}";
-
-            printButton.Enabled = true;
+            catch
+            {
+                changeButton.ForeColor = Color.Red;
+                changeOutput.Text = "Come on...";
+                tenderedInput.Text = "Seriously?";
+            }
         }
 
-        private void tenderedInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tenderedLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sepatatorBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void totalOutput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void taxOutput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void subOutput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void totalLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void taxLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void subtotalLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pu239Output_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void u238Output_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numberPu239Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numberU238Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numberU235Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void titlePic_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void orderBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void resetButton_Click(object sender, EventArgs e)
         {
@@ -279,149 +156,66 @@ namespace cashRegister
 
             changeButton.Text = $"Calculate Change";
 
-            recieptbox1.Visible = false;
-            titleLabel2.Visible = false;
+            changeButton.ForeColor = Color.Black;
 
-            recieptbox2.Visible = false;
-            recieptLabel1.Visible = false;
-            recieptLabel2.Visible = false;
-
-            recieptBox3.Visible = false;
-            u235recieptlabel.Visible = false;
-            u238recieptlabel2.Visible = false;
-            pu239recieptlabel3.Visible = false;
-
-            recieptBox4.Visible = false;
-            subrecieptLabel.Visible = false;
-            taxrecieptLabel.Visible = false;
-            totalrecieptLabel.Visible = false;
-
-            recieptbox5.Visible = false;
-            tenderedrecieptlabel.Visible = false;
-            changerecieptlabel.Visible = false;
-
-            recieptbox6.Visible = false;
-            messagerecieptlabel.Visible = false;
-
-
-            changeButton.Enabled = false;
-            printButton.Enabled = false;
-        }
-
-        private void printButton_Click(object sender, EventArgs e)
-        {
-
+            outputLabel.Visible = false;
         }
 
         private void printButton_Click_1(object sender, EventArgs e)
         {
-            recieptbox1.Visible = true;
-            titleLabel2.Visible = true;
-            Refresh();
-            Thread.Sleep(1000);
+            outputLabel.Visible = true;
 
-            recieptbox2.Visible = true;
-            recieptLabel1.Visible = true;
-            recieptLabel2.Visible = true;
-            Refresh();
-            Thread.Sleep(1000);
+            SoundPlayer player = new SoundPlayer(Properties.Resources.recieptSound);
 
-            recieptBox3.Visible = true;
-            
-            
+            player.Play();
 
-            pu239recieptlabel3.Visible = true;
-            u235recieptlabel.Visible = true;
-            u235recieptlabel.Text = $"Uranium-235     x{u235Counter}     {subTotal1.ToString("C")}";
-            Refresh();
-            Thread.Sleep(1000);
-
-            u238recieptlabel2.Visible = true;
-            u238recieptlabel2.Text = $"Uranium-238     x{u238Counter}     {subTotal2.ToString("C")}";
-            Refresh();
-            Thread.Sleep(1000);
-
-            pu239recieptlabel3.Visible = true;
-            pu239recieptlabel3.Text = $"Plutonium-239   x{pu239Counter}     {subTotal3.ToString("C")}";
-            Refresh();
-            Thread.Sleep(1000);
-
-            
-            
-            recieptBox4.Visible = true;
-            subrecieptLabel.Visible = true;
-            subrecieptLabel.Text = $"Subtotal               {subTotal.ToString("C")}";
-            Refresh();
-            Thread.Sleep(1000);
-
-            taxrecieptLabel.Visible = true;
-            taxrecieptLabel.Text = $"Tax                    {taxAmount.ToString("C")}";
-            Refresh();
-            Thread.Sleep(1000);
-
-            totalrecieptLabel.Visible = true;
-            totalrecieptLabel.Text = $"Total                  {total.ToString("C")}";
-            Refresh();
-            Thread.Sleep(1000);
-
-
-
-            tenderedrecieptlabel.Visible = true;
-            recieptbox5.Visible = true;
-            tenderedrecieptlabel.Text = $"Tendered               {tendered.ToString("C")}";
+            outputLabel.Text = $"\n          Radioisotope Market ";
             Refresh();
             Thread.Sleep(500);
 
-            changerecieptlabel.Visible = true;
-            changerecieptlabel.Text = $"Change                 {change.ToString("C")}";
+            outputLabel.Text = $"\n  Uranium-235     x{u235Counter}   {subTotal1.ToString("C")}";
+            Refresh();
+            Thread.Sleep(500);
+
+
+            outputLabel.Text += $"\n  Uranium-238     x{u238Counter}   {subTotal2.ToString("C")}";
+            Refresh();
+            Thread.Sleep(500);
+
+
+            outputLabel.Text += $"\n  Plutonium-239   x{pu239Counter}   {subTotal3.ToString("C")}";
+            Refresh();
+            Thread.Sleep(500);
+
+
+            outputLabel.Text += $"\n\n\n  Subtotal             {subTotal.ToString("C")}";
+            Refresh();
+            Thread.Sleep(500);
+
+
+            outputLabel.Text += $"\n  Tax                  {taxAmount.ToString("C")}";
+            Refresh();
+            Thread.Sleep(500);
+
+
+            outputLabel.Text += $"\n  Total                {total.ToString("C")}";
             Refresh();
             Thread.Sleep(500);
 
 
 
-            recieptbox6.Visible = true;
-            messagerecieptlabel.Visible = true;
-            messagerecieptlabel.Text = $"We are not liable for the \nconsumer's use of these \nitems after they are purchased.";
+            outputLabel.Text += $"\n\n\n  Tendered             {tendered.ToString("C")}";
+            Refresh();
+            Thread.Sleep(500);
+
+
+            outputLabel.Text += $"\n  Change               {change.ToString("C")}";
+            Refresh();
+            Thread.Sleep(500);
+
+
+            outputLabel.Text += $"\n\n\n  We are not liable for the\n  consumer's use of these\n  items after they are purchased.";
 
         }
     }
 }
-
-///recieptbox1.Visible = false;
-///titleLabel2.Visible = false;
-
-///recieptbox2.Visible = false;
-///recieptLabel1.Visible = false;
-///recieptLabel2.Visible = false;
-
-///recieptBox3.Visible = false;
-///u235recieptlabel.Visible = false;
-///u238recieptlabel2.Visible = false;
-///pu239recieptlabel3.Visible = false;
-
-///recieptBox4.Visible = false;
-///subrecieptLabel.Visible = false;
-///taxrecieptLabel.Visible = false;
-///totalrecieptLabel.Visible = false;
-
-///recieptbox5.Visible = false;
-///tenderedrecieptlabel.Visible = false;
-///changerecieptlabel.Visible = false;
-
-///recieptbox6.Visible = false;
-///messagerecieptlabel.Visible = false;
-///
-/// 
-/// 
-/// This should go into changeButton
-/// 
-/// 
-///if (tendered < total)
-///{
-///    printButton.Enabled = false;
-///}
-///
-///if (tendered < total)
-///{
-///   changeOutput.Text = "Pay More!";
-///}

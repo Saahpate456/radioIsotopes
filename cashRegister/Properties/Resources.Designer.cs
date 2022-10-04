@@ -109,5 +109,23 @@ namespace cashRegister.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream receiptSound {
+            get {
+                return ResourceManager.GetStream("receiptSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream recieptSound {
+            get {
+                return ResourceManager.GetStream("recieptSound", resourceCulture);
+            }
+        }
     }
 }
