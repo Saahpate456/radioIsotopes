@@ -53,9 +53,6 @@
             this.taxLabel = new System.Windows.Forms.Label();
             this.subtotalLabel = new System.Windows.Forms.Label();
             this.totalButton = new System.Windows.Forms.Button();
-            this.pu239Output = new System.Windows.Forms.TextBox();
-            this.u238Output = new System.Windows.Forms.TextBox();
-            this.u235Output = new System.Windows.Forms.TextBox();
             this.numberPu239Label = new System.Windows.Forms.Label();
             this.numberU238Label = new System.Windows.Forms.Label();
             this.numberU235Label = new System.Windows.Forms.Label();
@@ -66,6 +63,12 @@
             this.resetButton = new System.Windows.Forms.Button();
             this.titlePic = new System.Windows.Forms.PictureBox();
             this.outputLabel = new System.Windows.Forms.Label();
+            this.u235Output = new System.Windows.Forms.TextBox();
+            this.u238Output = new System.Windows.Forms.TextBox();
+            this.pu239Output = new System.Windows.Forms.TextBox();
+            this.removeButton1 = new System.Windows.Forms.Button();
+            this.removeButton2 = new System.Windows.Forms.Button();
+            this.removeButton3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).BeginInit();
@@ -80,7 +83,7 @@
             this.u235Label.AutoSize = true;
             this.u235Label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.u235Label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.u235Label.Location = new System.Drawing.Point(323, 74);
+            this.u235Label.Location = new System.Drawing.Point(323, 58);
             this.u235Label.Name = "u235Label";
             this.u235Label.Size = new System.Drawing.Size(36, 13);
             this.u235Label.TabIndex = 4;
@@ -92,7 +95,7 @@
             this.u238Label.AutoSize = true;
             this.u238Label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.u238Label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.u238Label.Location = new System.Drawing.Point(323, 179);
+            this.u238Label.Location = new System.Drawing.Point(323, 161);
             this.u238Label.Name = "u238Label";
             this.u238Label.Size = new System.Drawing.Size(36, 13);
             this.u238Label.TabIndex = 5;
@@ -104,7 +107,7 @@
             this.pu239Label.AutoSize = true;
             this.pu239Label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pu239Label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pu239Label.Location = new System.Drawing.Point(323, 269);
+            this.pu239Label.Location = new System.Drawing.Point(323, 266);
             this.pu239Label.Name = "pu239Label";
             this.pu239Label.Size = new System.Drawing.Size(41, 13);
             this.pu239Label.TabIndex = 6;
@@ -122,7 +125,7 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.titleLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.titleLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.titleLabel.Location = new System.Drawing.Point(52, 9);
@@ -141,7 +144,6 @@
             this.picBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox3.TabIndex = 3;
             this.picBox3.TabStop = false;
-            
             // 
             // picBox2
             // 
@@ -175,7 +177,6 @@
             this.backPicBox.Size = new System.Drawing.Size(795, 489);
             this.backPicBox.TabIndex = 0;
             this.backPicBox.TabStop = false;
-            
             // 
             // orderBox
             // 
@@ -205,7 +206,6 @@
             this.changeOutput.Name = "changeOutput";
             this.changeOutput.Size = new System.Drawing.Size(71, 20);
             this.changeOutput.TabIndex = 81;
-            
             // 
             // changeLabel
             // 
@@ -275,9 +275,9 @@
             // subOutput
             // 
             this.subOutput.Enabled = false;
-            this.subOutput.Location = new System.Drawing.Point(113, 190);
+            this.subOutput.Location = new System.Drawing.Point(134, 190);
             this.subOutput.Name = "subOutput";
-            this.subOutput.Size = new System.Drawing.Size(92, 20);
+            this.subOutput.Size = new System.Drawing.Size(71, 20);
             this.subOutput.TabIndex = 73;
             // 
             // totalLabel
@@ -321,31 +321,6 @@
             this.totalButton.UseVisualStyleBackColor = true;
             this.totalButton.Click += new System.EventHandler(this.totalButton_Click);
             // 
-            // pu239Output
-            // 
-            this.pu239Output.Enabled = false;
-            this.pu239Output.Location = new System.Drawing.Point(177, 114);
-            this.pu239Output.Name = "pu239Output";
-            this.pu239Output.Size = new System.Drawing.Size(38, 20);
-            this.pu239Output.TabIndex = 68;
-            // 
-            // u238Output
-            // 
-            this.u238Output.Enabled = false;
-            this.u238Output.Location = new System.Drawing.Point(177, 84);
-            this.u238Output.Name = "u238Output";
-            this.u238Output.Size = new System.Drawing.Size(38, 20);
-            this.u238Output.TabIndex = 67;
-            // 
-            // u235Output
-            // 
-            this.u235Output.Enabled = false;
-            this.u235Output.Location = new System.Drawing.Point(177, 51);
-            this.u235Output.Name = "u235Output";
-            this.u235Output.Size = new System.Drawing.Size(38, 20);
-            this.u235Output.TabIndex = 66;
-            
-            // 
             // numberPu239Label
             // 
             this.numberPu239Label.AutoSize = true;
@@ -383,27 +358,25 @@
             // u235costLabel
             // 
             this.u235costLabel.AutoSize = true;
-            this.u235costLabel.Location = new System.Drawing.Point(316, 91);
+            this.u235costLabel.Location = new System.Drawing.Point(316, 71);
             this.u235costLabel.Name = "u235costLabel";
             this.u235costLabel.Size = new System.Drawing.Size(48, 13);
             this.u235costLabel.TabIndex = 83;
             this.u235costLabel.Text = "$130/kg";
-            
             // 
             // u238costLabel
             // 
             this.u238costLabel.AutoSize = true;
-            this.u238costLabel.Location = new System.Drawing.Point(316, 203);
+            this.u238costLabel.Location = new System.Drawing.Point(316, 174);
             this.u238costLabel.Name = "u238costLabel";
             this.u238costLabel.Size = new System.Drawing.Size(48, 13);
             this.u238costLabel.TabIndex = 84;
             this.u238costLabel.Text = "$110/kg";
-            
             // 
             // pu239costLabel
             // 
             this.pu239costLabel.AutoSize = true;
-            this.pu239costLabel.Location = new System.Drawing.Point(316, 292);
+            this.pu239costLabel.Location = new System.Drawing.Point(316, 279);
             this.pu239costLabel.Name = "pu239costLabel";
             this.pu239costLabel.Size = new System.Drawing.Size(54, 13);
             this.pu239costLabel.TabIndex = 85;
@@ -439,11 +412,71 @@
             this.outputLabel.TabIndex = 108;
             this.outputLabel.Visible = false;
             // 
+            // u235Output
+            // 
+            this.u235Output.Enabled = false;
+            this.u235Output.Location = new System.Drawing.Point(166, 58);
+            this.u235Output.Name = "u235Output";
+            this.u235Output.Size = new System.Drawing.Size(39, 20);
+            this.u235Output.TabIndex = 112;
+            // 
+            // u238Output
+            // 
+            this.u238Output.Enabled = false;
+            this.u238Output.Location = new System.Drawing.Point(166, 84);
+            this.u238Output.Name = "u238Output";
+            this.u238Output.Size = new System.Drawing.Size(39, 20);
+            this.u238Output.TabIndex = 113;
+            // 
+            // pu239Output
+            // 
+            this.pu239Output.Enabled = false;
+            this.pu239Output.Location = new System.Drawing.Point(166, 114);
+            this.pu239Output.Name = "pu239Output";
+            this.pu239Output.Size = new System.Drawing.Size(39, 20);
+            this.pu239Output.TabIndex = 114;
+            // 
+            // removeButton1
+            // 
+            this.removeButton1.Location = new System.Drawing.Point(326, 87);
+            this.removeButton1.Name = "removeButton1";
+            this.removeButton1.Size = new System.Drawing.Size(33, 20);
+            this.removeButton1.TabIndex = 115;
+            this.removeButton1.Text = "-1";
+            this.removeButton1.UseVisualStyleBackColor = true;
+            this.removeButton1.Click += new System.EventHandler(this.removeButton1_Click);
+            // 
+            // removeButton2
+            // 
+            this.removeButton2.Location = new System.Drawing.Point(326, 193);
+            this.removeButton2.Name = "removeButton2";
+            this.removeButton2.Size = new System.Drawing.Size(33, 22);
+            this.removeButton2.TabIndex = 116;
+            this.removeButton2.Text = "-1";
+            this.removeButton2.UseVisualStyleBackColor = true;
+            this.removeButton2.Click += new System.EventHandler(this.removeButton2_Click);
+            // 
+            // removeButton3
+            // 
+            this.removeButton3.Location = new System.Drawing.Point(326, 295);
+            this.removeButton3.Name = "removeButton3";
+            this.removeButton3.Size = new System.Drawing.Size(33, 20);
+            this.removeButton3.TabIndex = 117;
+            this.removeButton3.Text = "-1";
+            this.removeButton3.UseVisualStyleBackColor = true;
+            this.removeButton3.Click += new System.EventHandler(this.removeButton3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 487);
+            this.Controls.Add(this.removeButton3);
+            this.Controls.Add(this.removeButton2);
+            this.Controls.Add(this.removeButton1);
+            this.Controls.Add(this.pu239Output);
+            this.Controls.Add(this.u238Output);
+            this.Controls.Add(this.u235Output);
             this.Controls.Add(this.outputLabel);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.pu239costLabel);
@@ -463,9 +496,6 @@
             this.Controls.Add(this.taxLabel);
             this.Controls.Add(this.subtotalLabel);
             this.Controls.Add(this.totalButton);
-            this.Controls.Add(this.pu239Output);
-            this.Controls.Add(this.u238Output);
-            this.Controls.Add(this.u235Output);
             this.Controls.Add(this.numberPu239Label);
             this.Controls.Add(this.numberU238Label);
             this.Controls.Add(this.numberU235Label);
@@ -519,9 +549,6 @@
         private System.Windows.Forms.Label taxLabel;
         private System.Windows.Forms.Label subtotalLabel;
         private System.Windows.Forms.Button totalButton;
-        private System.Windows.Forms.TextBox pu239Output;
-        private System.Windows.Forms.TextBox u238Output;
-        private System.Windows.Forms.TextBox u235Output;
         private System.Windows.Forms.Label numberPu239Label;
         private System.Windows.Forms.Label numberU238Label;
         private System.Windows.Forms.Label numberU235Label;
@@ -532,6 +559,12 @@
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.PictureBox titlePic;
         private System.Windows.Forms.Label outputLabel;
+        private System.Windows.Forms.TextBox u235Output;
+        private System.Windows.Forms.TextBox u238Output;
+        private System.Windows.Forms.TextBox pu239Output;
+        private System.Windows.Forms.Button removeButton1;
+        private System.Windows.Forms.Button removeButton2;
+        private System.Windows.Forms.Button removeButton3;
     }
 }
 
